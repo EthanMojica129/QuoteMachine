@@ -25,5 +25,5 @@
     "standard": "*",
     "vite": "^4.3.9"
   },
-  "homepage":"https://ethanmojica129.github.io/QuoteMachine/"
+  "homepage":"./ethanmojica129.github.io/QuoteMachine/"
 }
