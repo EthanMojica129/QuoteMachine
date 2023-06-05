@@ -9,6 +9,8 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "standard && node my-tests.js"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -25,5 +27,5 @@
     "standard": "*",
     "vite": "^4.3.9"
   },
-  "homepage":"./ethanmojica129.github.io/QuoteMachine/"
+  "homepage":"https://ethanmojica129.github.io/QuoteMachine/"
 }
