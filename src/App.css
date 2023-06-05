@@ -1,0 +1,70 @@
+
+#quote-box{
+  margin: 10% auto;
+  border: 1px solid white;
+  height: 300px;
+  position: relative;
+  background-color: white;
+  width: 50%;
+}
+
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+#text{
+  text-align: center;
+}
+
+#data{
+  display: flex;
+  padding: 2vh;
+  justify-content: end;
+  
+}
+
+#new-quote{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, 400%);
+  transform: translate(-50%, 400%);
+}
+
+
+#song{
+  font-style: italic;
+  margin-right: 0.5%;
+}
+
+body{
+  background-color:  #242424;
+  color:  #242424;
+}  
+
+#tweet-quote{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-495%, 290%);;
+  transform: translate(-495%, 290%);
+}
+
+.button {
+  height: 38px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #333;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 30px;
+  opacity: 1;
+  cursor: pointer;
+  border: 1px white solid;
+}
