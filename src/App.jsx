@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { returnRandomElements } from './helpers/QuoteMachine';
 import { colors, quotes } from './helpers/Quotes';
-import './App.css'
-
+import './App.css';
 let selection = returnRandomElements(quotes);
 let background= '#242424';
 
@@ -19,11 +18,10 @@ function App() {
     }
     document.body.style.backgroundColor = background;
     document.body.style.color=background;
-    let buttons = document.getElementsByClassName('button');
-    for(const button in buttons){
-      buttons[button].style.backgroundColor = background;
-    }
-
+    let quote = document.querySelector('#new-quote');
+    let tweet = document.querySelector('.twitter');
+    quote.style.color=background;
+    tweet.style.color=background;
   }
 
     const newQuote =()=>{
@@ -44,21 +42,49 @@ function App() {
     <h1 id= 'title'>Quotation Machine</h1>
     <div id='quote-box' >
       <h2 id='text'>{option.quote}</h2>
-      <div id = 'data'>
+    <div id = 'data'>
       <h3 id = 'song'> {option.song} -</h3>  
       <h3 id='author'> {option.author} </h3>
-      </div>
-    <div id='buttons'>
-      <button id='new-quote' className='button' onClick={newQuote}>Get a new Quote</button>
-      <a
-            className="button"
-            id="tweet-quote"
-            title="Tweet this quote!"
-            target="_top"
-          >
-            <i className="fa fa-twitter"></i>
-          </a>
     </div>
+    </div>
+    <div id='buttons'>
+      <div id='socials'  
+      onClick={()=>{
+          let text = document.querySelector('#text');
+          let data = document.querySelector('#data');
+          let tweetUrl = `https://twitter.com/intent/tweet?url="${text.innerText}"
+          ${data.innerText} `;
+          window.open(tweetUrl, "_blank");
+        }}
+      onMouseOver={()=>{
+        document.querySelector('#socials').style.backgroundColor=background;
+        document.querySelector('.twitter').style.color='#FFFFFF';
+        console.log(document.querySelector('.twitter').style.color)
+      }}
+      onMouseOut={()=>{
+        document.querySelector('#socials').style.backgroundColor='#FFFFFF';
+        document.querySelector('.twitter').style.color=background;
+      }}>
+        <a className='twitter' onClick={()=>{
+          let text = document.querySelector('#text');
+          let data = document.querySelector('#data');
+          let tweetUrl = `https://twitter.com/intent/tweet?url="${text.innerText}"
+          ${data.innerText} `;
+          window.open(tweetUrl, "_blank");
+        }}>Tweet</a>
+      </div>
+      <button id='new-quote' 
+      className='button' 
+      onClick={newQuote}
+      onMouseOver={()=>{
+        document.querySelector('#new-quote').style.backgroundColor=background;
+        document.querySelector('#new-quote').style.color='#FFFFFF';
+      }}
+      onMouseOut={()=>{
+        document.querySelector('#new-quote').style.backgroundColor='#FFFFFF';
+        document.querySelector('#new-quote').style.color=background;
+      }}
+      >Get a new Quote</button>
     </div>
     </>
   )
