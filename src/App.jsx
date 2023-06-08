@@ -22,6 +22,7 @@ function App() {
     let tweet = document.querySelector('.twitter');
     quote.style.color=background;
     tweet.style.color=background;
+    return background;
   }
 
     const newQuote =()=>{
@@ -33,7 +34,9 @@ function App() {
         }
       }
       setOption(selection);
-      bgColors();
+      let background =bgColors();
+      document.querySelector('#new-quote').style.backgroundColor=background;
+      document.querySelector('#new-quote').style.color='#FFFFFF';
     }
 
 
