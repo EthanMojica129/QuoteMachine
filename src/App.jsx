@@ -62,7 +62,6 @@ function App() {
       onMouseOver={()=>{
         document.querySelector('#socials').style.backgroundColor=background;
         document.querySelector('.twitter').style.color='#FFFFFF';
-        console.log(document.querySelector('.twitter').style.color)
       }}
       onMouseOut={()=>{
         document.querySelector('#socials').style.backgroundColor='#FFFFFF';
